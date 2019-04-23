@@ -1,0 +1,287 @@
+﻿/*
+    colors:
+    dark: #121728
+    medium: #0086b4
+    light: #85cde5
+    lightest: #dcf1f8
+    background: #222328
+*/
+
+@font-face {
+    font-family: FiraCodeBold;
+    src: url(./fira-code/font/FiraCode-Bold.woff);
+}
+
+@font-face {
+    font-family: FiraCodeLight;
+    src: url(./fira-code/font/FiraCode-Light.woff);
+}
+
+@font-face {
+    font-family: FiraCodeMedium;
+    src: url(./fira-code/font/FiraCode-Medium.woff);
+}
+
+@font-face {
+    font-family: FiraCode;
+    src: url(./fira-code/font/FiraCode-Regular.woff);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+body {
+    background-color: #222328;
+    color: #85cde5;
+    font-family: FiraCode;
+}
+
+.flexboxcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.container {
+    background-color: #121728;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px #111;
+    height: 150px;
+    width: 800px;
+    margin: 0;
+    margin-top: 30px;
+    flex: 1 0 800px;
+    font-family: FiraCodeLight;
+}
+
+#nav {
+    width: 200px;
+    position: fixed;
+    left: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#notclickable {
+    margin-top: 10px;
+    color: #0086b4;
+}
+
+    #notclickable::before {
+        content: "$>";
+        padding-right: 8px;
+    }
+
+.item::before {
+    content: "\00a0 -";
+    padding-right: 8px;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.activenav::before {
+    content: "\00a0 >";
+}
+
+li {
+    font-size: 1.3em;
+}
+
+h1 {
+    padding-top: 25px;
+}
+
+#typerParent {
+    position: relative;
+    text-align: center;
+}
+
+.section {
+    vertical-align: top;
+}
+
+.sectioncontent img
+{
+    width: 250px;
+    margin: 15px auto;
+    border-radius: 550px;
+    display: block;
+}
+
+.sectionheader {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #0086b4;
+}
+
+.section p {
+    margin-top: 10px;
+}
+
+body {
+    overflow: hidden;
+}
+
+#divbody {
+    overflow: auto;
+    height: 100vh;
+}
+
+.blink {
+    animation: blink 1s step-start infinite;
+}
+
+.subheaders {
+    color: #dcf1f8;
+    margin-top: 10px;
+}
+
+.repo {
+    background-color: #283358;
+    color: #dcf1f8;
+    padding-top: 10px;
+    position: relative;
+}
+
+.collapsible {
+    color: #dcf1f8;
+    background-color: #202946;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .collapsible:hover {
+        background-color: #283358;
+    }
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible_content {
+    /*padding: 0 18px;*/
+    display: none;
+    overflow: hidden;
+    background-color: #202946;
+}
+
+.stats {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    margin-top: 25px;
+    background-color: #121728;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h6 {
+    min-width: 100%;
+    text-align: center;
+}
+
+.social-icon {
+    margin-top: -40px;
+    font-size: 30px;
+}
+
+#github, #linkedin {
+    margin-left: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 210.033px
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #85cde5;
+    }
+}
+
+.preload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222328;
+    z-index: 1;
+}
+
+    .preload h3 {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid #85cde5; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .16em; /* Adjust as needed */
+        animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite, opacity 2s linear 4s forwards;
+    }
+
+.preload {
+    animation: opacity 2s linear 3.5s forwards;
+}
+
+@media screen and (max-width: 1215px) {
+    #nav {
+        display: none;
+    }
+}

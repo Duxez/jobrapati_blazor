@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>Job Rapati</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/fira-code/FiraCode.css" />
+    <link href="css/site.css?version=3" rel="stylesheet" />
+</head>
+<body>
+    
+    <app>
+        
+    </app>
+
+    <script src="_framework/components.webassembly.js"></script>
+    <script src="js/typer.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+    <script>
+        window.typeWriter = () => {
+            console.log("HI");
+            TyperSetup();
+            return true;
+        }
+        function morerepos(e) {
+            if (!e)
+                e = window.event;
+            var sender = e.srcElement || e.target;
+
+            sender.classList.toggle("active");
+            let number = sender.innerText.match(/\d+/)[0];
+            var content = sender.nextElementSibling;
+            if (content.style.display === "block") {
+                sender.innerHTML = "See " + number + " more repositories<span class='blink'>_</span>";
+                content.style.display = "none";
+            }
+            else {
+                sender.innerHTML = "Hide " + number + " repositories<span class='blink'>_</span>";
+                content.style.display = "block";
+            }
+        }
+
+        let currentlyNavigating = false;
+
+        function scrolling()
+        {
+            let navItems = Array.from(document.getElementsByClassName("item"));
+            let divs = Array.from(document.getElementsByClassName("section"));
+            let filtereddivs = [];
+
+            for (let i = 0; i < divs.length; i++) {
+                if (divs[i].id === "aboutme" || divs[i].id === "projects" || divs[i].id === "contact")
+                    filtereddivs.push(divs[i]);
+            }
+
+            if (currentlyNavigating)
+                return;
+
+            let body = document.getElementById("divbody");
+
+            for (let i = 0; i < navItems.length; i++) {
+                if (body.scrollTop >= filtereddivs[i].offsetTop) {
+                    navItems.forEach((el) => { el.classList.remove("activenav") });
+                    navItems[i].classList.add("activenav");
+                }
+                else if (body.scrollTop < filtereddivs[i].offsetTop)
+                    navItems[i].classList.remove("activenav");
+            }
+        }
+
+        function GetScrollValue(elem) {
+            let scroll = window.pageYOffset - window.innerHeight;
+            let targetID = elem.id.substring('link-'.length);
+            var objectScroll = document.getElementById(targetID).offsetTop;
+            if (scroll > objectScroll)
+                return objectScroll;
+            else
+                return -1;
+        }
+
+        function scrollTo(element, to, duration) {
+            if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 10;
+
+            setTimeout(function () {
+                element.scrollTop = element.scrollTop + perTick;
+                if (element.scrollTop == to || element.scrollTop === (element.scrollHeight - element.offsetHeight)) {
+                    currentlyNavigating = false;
+                    return;
+                }
+                scrollTo(element, to, duration - 10);
+            }, 10);
+        }
+
+        function navClick(e) {
+            console.log('hello');
+
+            if (currentlyNavigating)
+                return;
+
+            if (!e)
+                e = window.event;
+            var sender = e.srcElement || e.target;
+
+            let targetDiv = sender.id.substring('link-'.length);
+            if (document.getElementsByClassName("activenav").length > 0)
+                document.getElementsByClassName("activenav")[0].classList.remove("activenav");
+
+            sender.classList.add("activenav");
+
+            currentlyNavigating = true;
+            let targetDivEl = document.getElementById(targetDiv);
+            scrollTo(document.getElementById("divbody"), targetDivEl.offsetTop, 600);
+        }
+    </script>
+</body>
+</html>

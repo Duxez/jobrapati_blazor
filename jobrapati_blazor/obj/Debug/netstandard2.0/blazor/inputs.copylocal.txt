@@ -1,0 +1,9 @@
+C:\Users\jrapa\.nuget\packages\microsoft.aspnetcore.blazor\0.9.0-preview3-19154-02\lib\netstandard2.0\Microsoft.AspNetCore.Blazor.dll
+C:\Users\jrapa\.nuget\packages\microsoft.aspnetcore.components\3.0.0-preview3-19153-02\lib\netstandard2.0\Microsoft.AspNetCore.Components.dll
+C:\Users\jrapa\.nuget\packages\microsoft.aspnetcore.components.browser\3.0.0-preview3-19153-02\lib\netstandard2.0\Microsoft.AspNetCore.Components.Browser.dll
+C:\Users\jrapa\.nuget\packages\microsoft.extensions.dependencyinjection\3.0.0-preview3.19153.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\jrapa\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\3.0.0-preview3.19153.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\jrapa\.nuget\packages\microsoft.jsinterop\3.0.0-preview3.19153.1\lib\netstandard2.0\Microsoft.JSInterop.dll
+C:\Users\jrapa\.nuget\packages\mono.webassembly.interop\3.0.0-preview3.19153.1\lib\netstandard2.0\Mono.WebAssembly.Interop.dll
+C:\Users\jrapa\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll
+C:\Users\jrapa\.nuget\packages\system.componentmodel.annotations\4.6.0-preview3.19128.7\lib\netstandard2.0\System.ComponentModel.Annotations.dll
